@@ -10,6 +10,21 @@ if !isdirectory(s:dein_repo_dir)
 endif
 let &runtimepath = s:dein_repo_dir . "," . &runtimepath
 
+" Load plugins by dein
+let s:toml_file = fnamemodify(expand('<sfile>'), ':h') . '/dein/dein.toml'
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
+    call dein#load_toml(s:toml_file)
+    call dein#end()
+    call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
+if has('vim_starting') && dein#check_install()
+   call dein#install()
+endif
+
 
 
 set scrolloff=0
