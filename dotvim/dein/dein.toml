@@ -2,6 +2,9 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
 hook_add = '''
