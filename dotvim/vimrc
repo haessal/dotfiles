@@ -27,5 +27,11 @@ endif
 
 
 
+" Setting statusline
+set laststatus=2
+let &statusline = "%<%f %m%r%h%w[%{&ff}][%{(&fenc!=''?&fenc:&enc).(&bomb?':bom':'')}] "
+let &statusline .= "0x%B"
+let &statusline .= "%=%l,%c%V %P"
+
 set scrolloff=0
 set mouse=
